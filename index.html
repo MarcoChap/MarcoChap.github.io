@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponics Blockly</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Including Blockly Core JS -->
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+
+    <!-- Including Blockly Standard Blocks -->
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+
+    <!-- Including Blockly English Localization -->
+    <script src="https://unpkg.com/blockly/msg/js/en.js"></script>
+
+    <!-- Including Blockly Code Generator -->
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+
+    <!-- Linking the custom_blocks.js -->
+    <script src="custom_blocks.js"></script>
+</head>
+
+<body>
+    <!-- UI Container -->
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+
+        <!-- Blockly Editor -->
+        <div id="blocklyDiv" style="height: 80vh; width: 80vw;"></div>
+
+        <!-- Run Code Button -->
+        <button id="runCode" style="align-self: flex-start; margin-top: 10px;">Run Code</button>
+
+        <!-- Output Division -->
+        <div id="outputDiv" style="border: 1px solid black; width: 80vw; margin-top: 10px; padding: 10px; height: 5em; overflow-y: scroll;"></div>
+
+    </div>
+
+    <!-- Toolbox XML for Blockly -->
+    <xml id="toolbox" style="display: none">
+        <category name="Basic Operations">
+            <category name="Loops">
+                <block type="controls_whileUntil"></block>
+                <block type="controls_for"></block>
+            </category>
+            <category name="Logic">
+                <block type="controls_if"></block>
+                <block type="logic_compare"></block> <!-- This is the comparison block -->
+            </category>
+            <category name="Input/Output">
+                <block type="number"></block>
+                <block type="print"></block>
+            </category>            
+        </category>
+        <category name="Hydroponics Operations">
+            <block type="check_ph"></block>
+            <block type="check_water_level"></block>
+            <block type="check_water_temperature"></block>
+            <block type="enable_relay"></block>
+            <block type="disable_relay"></block>
+            <block type="read_sensor"></block>
+        </category>
+    </xml>
+
+    <!-- Including our App's JavaScript -->
+    <script src="app.js"></script>
+</body>
+
+</html>
